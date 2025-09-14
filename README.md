@@ -1,38 +1,45 @@
-# Supervised Machine Learning Classification Pipeline for Medical Data
+# DAT200 CA2: Supervised Machine Learning Classification Pipeline for Medical Data
 
-A machine learning pipeline for binary classification of fetal health data using linear classifiers. This project implements and compares Perceptron, Adaline, and Logistic Regression algorithms on medical diagnostic data.
-
-## Authors
-
-- **Jannicke Ådalen**
-- **Marcus Dalaker Figenschou** 
-- **Rikke Sellevold Vegstein**
-
-*Group project for DAT200 Applied Machine Learning, Spring 2025 (CA2)*
+**Group 37**
+- Jannicke Ådalen
+- Marcus Dalaker Figenschou
+- Rikke Sellevold Vegstein
 
 ## Project Overview
 
-This project implements a supervised machine learning workflow for fetal health classification. We compare three linear classifiers on cardiotocographic data to predict fetal health outcomes (Normal vs Pathological).
+This project implements a supervised machine learning workflow for fetal health classification using linear classifiers. We compare three linear classification algorithms (Perceptron, Adaline, and Logistic Regression) on cardiotocographic data to predict fetal health outcomes in a binary classification task (Normal vs Pathological).
 
-## Dataset
+**Final Result:** Academic assignment focusing on algorithm comparison and implementation
 
-- **Source**: `assets/fetal_health.csv`
-- **Target**: Binary classification (0 = Normal, 1 = Pathological)
-- **Features**: Cardiotocographic measurements (baseline fetal heart rate, accelerations, etc.)
+## Technical Approach
 
-## Implementation
+- **Models**: Perceptron, Adaline (Adaptive Linear Neuron), Logistic Regression
+- **Data Processing**: Stratified train/test split, Z-score normalization, missing value handling
+- **Evaluation**: Performance comparison across different dataset sizes (50-700 samples) and epochs (2-97)
+- **Visualization**: Decision boundaries, performance heatmaps, and convergence analysis
 
-### Models
-- **Perceptron**: Binary linear classifier with threshold activation
-- **Adaline**: Adaptive linear neuron with continuous activation  
-- **Logistic Regression**: Probabilistic linear classifier with sigmoid activation
+## Key Features
 
-### Key Features
-- Data loading and validation with missing value handling
-- Stratified train/test split to maintain class balance
-- Feature standardization using Z-score normalization
-- Performance evaluation across different dataset sizes and epochs
-- Visualization of results with heatmaps and decision boundaries
+- Binary linear classifier with threshold activation (Perceptron)
+- Adaptive linear neuron with continuous activation (Adaline)
+- Probabilistic linear classifier with sigmoid activation (Logistic Regression)
+- Feature standardization for improved convergence
+- Comprehensive performance evaluation and visualization
+
+## Results
+
+- Logistic Regression demonstrated the most stable performance across configurations
+- Model performance generally improved with larger training sets
+- Feature standardization significantly enhanced convergence rates
+- Limited linear separability suggested potential benefits from more complex models
+
+## Files Structure
+
+- `CA2.py` - Main implementation script
+- `CA2.ipynb` - Jupyter notebook version with detailed analysis
+- `assets/fetal_health.csv` - Cardiotocographic dataset
+- `assets/example_output.png` - Sample visualization output
+- `pyproject.toml` - Project dependencies
 
 ## Requirements
 
@@ -43,59 +50,15 @@ This project implements a supervised machine learning workflow for fetal health 
 - seaborn >= 0.13.2
 - mlxtend >= 0.23.4
 
-## Installation
-
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd ca2_supervised_medical_ml_pipeline
-```
-
-2. Install dependencies:
-```bash
-uv sync
-```
-
 ## Usage
 
-Run the complete pipeline:
-```bash
-python CA2.py
-```
+1. Install dependencies: `uv sync` or `pip install -e .`
+2. Run the main script: `python CA2.py`
+3. Or use the Jupyter notebook: `jupyter notebook CA2.ipynb`
 
-Or use the Jupyter notebook:
-```bash
-jupyter notebook CA2.ipynb
-```
+## Dataset
 
-## Project Structure
-
-```
-ca2_supervised_medical_ml_pipeline/
-├── CA2.py                      # Main implementation
-├── CA2.ipynb                   # Jupyter notebook version
-├── README.md                   # This file
-├── pyproject.toml             # Dependencies
-├── assets/
-│   ├── fetal_health.csv       # Dataset
-│   └── example_output.png     # Sample output
-└── .gitignore                 # Git ignore rules
-```
-
-## Methodology
-
-1. **Data Exploration**: Statistical analysis and visualization of features and target distribution
-2. **Preprocessing**: Stratified splitting and feature standardization
-3. **Model Training**: Training across multiple dataset sizes (50-700 samples) and epochs (2-97)
-4. **Evaluation**: Performance comparison using accuracy metrics and visualization
-
-## Results
-
-- Logistic Regression shows most stable performance across configurations
-- Model performance generally improves with larger training sets
-- Feature standardization significantly improves convergence
-- Limited linear separability suggests potential for more complex models
-
-## License
-
-This project is created for educational purposes as part of DAT200 coursework.
+- **Source**: Cardiotocographic measurements from `assets/fetal_health.csv`
+- **Target**: Binary classification (0 = Normal, 1 = Pathological)
+- **Features**: Baseline fetal heart rate, accelerations, and other medical indicators
+- **Preprocessing**: Stratified splitting and feature standardization applied
