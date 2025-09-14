@@ -43,12 +43,7 @@ This project implements a supervised machine learning workflow for fetal health 
 
 ## Requirements
 
-- Python >= 3.13
-- pandas >= 2.3.2
-- numpy >= 2.3.3
-- matplotlib >= 3.10.6
-- seaborn >= 0.13.2
-- mlxtend >= 0.23.4
+See `pyproject.toml` for dependencies. Key requirements include scikit-learn, pandas, numpy, and matplotlib for comprehensive machine learning pipeline implementation.
 
 ## Usage
 
